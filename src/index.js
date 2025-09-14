@@ -44,3 +44,19 @@ function handlePodcastCardClick(podcast) {
   modal.setContent(modalContent);
   modal.open();
 }
+// Function to render podcasts in grid
+function renderPodcasts(podcastList = podcasts) {
+  if (!grid) {
+    console.error("Grid container not found");
+    return;
+  }
+
+  const cards = podcastList.map((podcast) =>
+    createPodcastCard(podcast, handlePodcastCardClick)
+  );
+
+  grid.renderCards(cards);
+}
+
+// Start the app
+renderPodcasts();
