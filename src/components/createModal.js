@@ -49,5 +49,13 @@ export function createModal(modalId) {
     clear() {
       this.modal.innerHTML = "";
     },
+
+    addClass(className) {
+      this.modal.classList.add(className);
+    },
+
+    removeClass(className) {
+      this.modal.classList.remove(className);
+    },
   };
 }
