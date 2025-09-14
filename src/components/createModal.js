@@ -57,5 +57,20 @@ export function createModal(modalId) {
     removeClass(className) {
       this.modal.classList.remove(className);
     },
+
+    init() {
+      this.modal.addEventListener("click", (e) => {
+        if (e.target === this.modal) this.close();
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && this.isOpen()) this.close();
+      });
+
+      const closeButton = this.modal.querySelector(".modal-close");
+      if (closeButton) {
+        closeButton.addEventListener("click", () => this.close());
+      }
+    },
   };
 }
