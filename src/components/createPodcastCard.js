@@ -1,6 +1,6 @@
 import { formatDate } from "../utils/DateUtils.js";
 
-export function createPodcastCard(podcast, genreService, onCardClick) {
+export function createPodcastCard(podcast, onCardClick) {
   // Create the main card container
   const card = document.createElement("div");
   card.classList.add("podcast-card");
