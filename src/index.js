@@ -11,3 +11,25 @@ const modal = createModal("modal");
 if (modal) {
   modal.init();
 }
+// Function to create modal content
+function createModalContent(podcast) {
+  return `
+    <div class="modal-content">
+      <span class="modal-close">&times;</span>
+      <div class="modal-body">
+        <div class="modal-podcast-header">
+          <img src="${podcast.image}" alt="${podcast.title}" class="modal-podcast-cover" />
+          <div class="modal-podcast-info">
+            <h2 class="modal-podcast-title">${podcast.title}</h2>
+            <p class="modal-podcast-updated">Last updated: ${podcast.updated}</p>
+            <p class="modal-podcast-seasons">${podcast.seasons} seasons</p>
+          </div>
+        </div>
+        <div class="modal-podcast-description">
+          <h3>Description</h3>
+          <p>${podcast.description}</p>
+        </div>
+      </div>
+    </div>
+  `;
+}
