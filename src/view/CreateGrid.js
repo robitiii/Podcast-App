@@ -8,5 +8,16 @@ export function createGrid(containerId) {
 
   return {
     container,
+
+    clear() {
+      this.container.innerHTML = "";
+    },
+
+    renderCards(cards) {
+      this.clear();
+      cards.forEach((card) => {
+        this.container.appendChild(card);
+      });
+    },
   };
 }
