@@ -13,5 +13,17 @@ export function createModal(modalId) {
     return null;
   }
 
-  return { modal };
+  return {
+    modal,
+
+    open() {
+      this.modal.classList.remove("hidden");
+      document.body.style.overflow = "hidden";
+    },
+
+    close() {
+      this.modal.classList.add("hidden");
+      document.body.style.overflow = "auto";
+    },
+  };
 }
