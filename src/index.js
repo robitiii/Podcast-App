@@ -33,3 +33,14 @@ function createModalContent(podcast) {
     </div>
   `;
 }
+// Function to handle podcast card click
+function handlePodcastCardClick(podcast) {
+  if (!modal) {
+    console.error("Modal not initialized");
+    return;
+  }
+
+  const modalContent = createModalContent(podcast);
+  modal.setContent(modalContent);
+  modal.open();
+}
