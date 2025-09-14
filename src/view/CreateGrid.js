@@ -29,5 +29,17 @@ export function createGrid(containerId) {
         this.container.removeChild(card);
       }
     },
+
+    getCardCount() {
+      return this.container.children.length;
+    },
+
+    addClass(className) {
+      this.container.classList.add(className);
+    },
+
+    removeClass(className) {
+      this.container.classList.remove(className);
+    },
   };
 }
