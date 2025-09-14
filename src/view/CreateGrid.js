@@ -19,5 +19,15 @@ export function createGrid(containerId) {
         this.container.appendChild(card);
       });
     },
+
+    addCard(card) {
+      this.container.appendChild(card);
+    },
+
+    removeCard(card) {
+      if (this.container.contains(card)) {
+        this.container.removeChild(card);
+      }
+    },
   };
 }
