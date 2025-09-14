@@ -25,5 +25,29 @@ export function createModal(modalId) {
       this.modal.classList.add("hidden");
       document.body.style.overflow = "auto";
     },
+
+    toggle() {
+      if (this.isOpen()) {
+        this.close();
+      } else {
+        this.open();
+      }
+    },
+
+    isOpen() {
+      return !this.modal.classList.contains("hidden");
+    },
+
+    setContent(content) {
+      this.modal.innerHTML = content;
+    },
+
+    addContent(content) {
+      this.modal.innerHTML += content;
+    },
+
+    clear() {
+      this.modal.innerHTML = "";
+    },
   };
 }
